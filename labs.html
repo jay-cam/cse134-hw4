@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Labs &amp; Experiments – Jay Campbell</title>
 
-  <!-- 1) CSS-only custom element styling -->
+  <!-- CSS-only custom element styling -->
   <style>
     fancy-box {
       display: block;
@@ -20,61 +20,121 @@
       background: #fee;
     }
   </style>
-
-  <!-- 2) Register both custom elements -->
-  <script>
-    // a) semantic CSS custom element (no JS behavior)
-    class FancyBox extends HTMLElement {}
-    customElements.define('fancy-box', FancyBox);
-
-    // b) Hello World element (logs to console when connected)
-    class HelloWorld extends HTMLElement {
-      connectedCallback() {
-        console.log('👋 Hello world from <hello-world>!');
-      }
-    }
-    customElements.define('hello-world', HelloWorld);
-  </script>
 </head>
-
 <body>
   <header>
     <nav>
       <a href="/">Home</a>
       <a href="/projects.html">Projects</a>
-      <a href="/labs.html">Labs</a>
+      <a href="/labs.html" aria-current="page">Labs</a>
     </nav>
     <h1>Labs &amp; Experiments</h1>
-    <p>Sandbox for custom elements and tag demos.</p>
+    <p>Sandbox for custom elements and HTML-only demos.</p>
   </header>
 
   <main>
+    <!-- CSS-only custom element -->
     <section>
       <h2>Semantic CSS Element: &lt;fancy-box&gt;</h2>
-      <p>This block is a custom element styled purely with CSS.</p>
-
-      <!-- default style -->
-      <fancy-box>
-        Default fancy box.
-      </fancy-box>
-
-      <!-- alert variant -->
-      <fancy-box variant="alert">
-        Alert-style fancy box.
-      </fancy-box>
+      <fancy-box>Default fancy box content.</fancy-box>
+      <fancy-box variant="alert">Alert-style fancy box content.</fancy-box>
     </section>
 
+    <!-- Blockquote & Cite -->
     <section>
-      <h2>Hello World Element: &lt;hello-world&gt;</h2>
-
-
-      <!-- placing it on the page triggers the log -->
-      <hello-world></hello-world>
+      <h2>Blockquote &amp; Cite</h2>
+      <blockquote cite="https://example.com">
+        <p>“Code is like humor. When you have to explain it, it’s bad.”</p>
+        <cite>— Cory House</cite>
+      </blockquote>
     </section>
 
-    <footer>
-      <p>© Jay Campbell</p>
-    </footer>
+    <!-- Canvas & SVG -->
+    <section>
+      <h2>Canvas &amp; SVG</h2>
+      <canvas width="200" height="100">
+        Your browser doesn’t support canvas.
+      </canvas>
+      <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" fill="lightblue"></circle>
+      </svg>
+    </section>
+
+    <!-- Video & IFrame -->
+    <section>
+      <h2>Video &amp; IFrame</h2>
+      <video controls>
+        <source src="video/sample.mp4" type="video/mp4">
+        Sorry, your browser doesn’t support video.
+      </video>
+      <iframe width="300" height="150"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title="Demo Video" allowfullscreen>
+      </iframe>
+    </section>
+
+    <!-- Details & Dialog (static open) -->
+    <section>
+      <h2>Details &amp; Dialog</h2>
+      <details>
+        <summary>More info</summary>
+        <p>This is hidden until you click “More info.”</p>
+      </details>
+
+      <!-- Static dialog without script -->
+      <dialog open>
+        <p>This dialog is permanently open (no JS needed).</p>
+      </dialog>
+    </section>
+
+    <!-- Template (static demonstration) -->
+    <section>
+      <h2>Template Example</h2>
+      <template id="tpl">
+        <div>This is template content (not rendered).</div>
+      </template>
+      <div>
+        <!-- To “use” it, we simply show the template markup as code -->
+        <pre><code>&lt;template id="tpl"&gt;…&lt;/template&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- Search & Form controls -->
+    <section>
+      <h2>Search &amp; Form Controls</h2>
+      <search>
+        <label for="q">Search:</label>
+        <input type="search" id="q" name="q">
+      </search>
+
+      <form>
+        <fieldset>
+          <legend>Select Example</legend>
+          <label for="sel">Pick one:</label>
+          <select id="sel" name="sel">
+            <optgroup label="Group A">
+              <option value="a1">Alpha</option>
+              <option value="a2">Beta</option>
+            </optgroup>
+            <option value="g1">Gamma</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Datalist Example</legend>
+          <label for="dl">Choose:</label>
+          <input list="dl" id="dl" name="dl">
+          <datalist id="dl">
+            <option value="One"></option>
+            <option value="Two"></option>
+          </datalist>
+        </fieldset>
+      </form>
+    </section>
   </main>
+
+  <footer>
+    <p>© Jay Campbell</p>
+  </footer>
 </body>
 </html>
