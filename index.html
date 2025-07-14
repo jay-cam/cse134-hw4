@@ -1,145 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta
-      name="description"
-      content="Jay Campbell's portfolio and digital garden"
-    >
-    <title>Jay Campbell – Portfolio</title>
-  </head>
-  <body>
-    <noscript>
-      <p>JavaScript is disabled in your browser—some features may not work.</p>
-    </noscript>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="Jay Campbell's portfolio and digital garden">
+  <title>Jay Campbell – Portfolio</title>
+</head>
+<body>
+  <noscript>
+    <p>JavaScript is disabled in your browser—some features may not work.</p>
+  </noscript>
 
-    <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/now.html">Now</a>
-        <a href="/uses.html">Uses</a>
-        <a href="/projects.html">Projects</a>
-        <a href="/blog.html">Blog</a>
-        <a href="/contact.html">Contact</a>
-        <a href="/sitemap.html">Sitemap</a>
-      </nav>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/now.html">Now</a>
+      <a href="/uses.html">Uses</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/sitemap.html">Sitemap</a>
+    </nav>
 
-      <hgroup>
-        <h1>Hi, I’m Jay Campbell</h1>
-      </hgroup>
-      <h2>Building things on the web</h2>
-      <hr />
+    <hgroup>
+      <h1>Hi, I’m Jay Campbell</h1>
+    </hgroup>
+    <h2>Building things on the web</h2>
+    <hr>
 
-      <p>
-        I'm a <strong>software developer</strong> passionate about creating
-        impactful projects using modern technologies like
-        <abbr title="HyperText Markup Language">HTML</abbr> and
-        <abbr title="Cascading Style Sheets">CSS</abbr>. Welcome to my
-        portfolio!
-      </p>
+    <p>
+      I'm a <strong>software developer</strong> passionate about creating impactful
+      projects using modern technologies like
+      <abbr title="HyperText Markup Language">HTML</abbr> and
+      <abbr title="Cascading Style Sheets">CSS</abbr>. Welcome to my portfolio!
+    </p>
 
-      <a href="/projects.html">View Portfolio</a>
-    </header>
+    <a href="/projects.html">View Portfolio</a>
+  </header>
 
-    <main>
-      <section aria-labelledby="intro-div">
-        <h2 id="intro-div">Intro</h2>
-        <div><span>Welcome to my portfolio site.</span><br /></div>
-      </section>
+  <main>
+    <section aria-labelledby="intro-div">
+      <h2 id="intro-div">Intro</h2>
+      <div>
+        <span>Welcome to my portfolio site.</span><br>
+      </div>
+    </section>
 
-      <section aria-labelledby="projects-heading">
-        <h2 id="projects-heading">Featured Projects</h2>
+    <section aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Featured Projects</h2>
 
-        <article>
-          <h3>Project Title 1</h3>
-          <figure>
-            <picture>
-              <source
-                media="(min-width: 800px)"
-                srcset="images/placeholder-large.jpg"
-              />
-              <source
-                media="(min-width: 400px)"
-                srcset="images/placeholder-medium.jpg"
-              />
-              <img
-                src="images/placeholder-small.jpg"
-                alt="Screenshot of Project 1"
-              />
-            </picture>
-            <figcaption>
-              <p>Short description of the project.</p>
-            </figcaption>
-          </figure>
-        </article>
-
-        <article>
-          <h3>Project Title 2</h3>
-          <figure>
+      <!-- Project 1: with <picture> -->
+      <article>
+        <h3>Project Title 1</h3>
+        <figure>
+          <picture>
+            <source
+              media="(min-width: 800px)"
+              srcset="/images/placeholder-large.jpg">
+            <source
+              media="(min-width: 400px)"
+              srcset="/images/placeholder-medium.jpg">
             <img
-              src="images/placeholder.jpg"
-              alt="Screenshot of Project 2"
-              width="300"
-            />
-            <figcaption>
-              <p>Short description of the project.</p>
-            </figcaption>
-          </figure>
-        </article>
+              src="/images/placeholder-small.jpg"
+              alt="Screenshot of Project 1">
+          </picture>
+          <figcaption>
+            <p>Short description of the project.</p>
+          </figcaption>
+        </figure>
+      </article>
 
-        <a href="/projects.html">+ See More</a>
+      <!-- Project 2 -->
+      <article>
+        <h3>Project Title 2</h3>
+        <figure>
+          <img
+            src="/images/placeholder.jpg"
+            alt="Screenshot of Project 2"
+            width="300">
+          <figcaption>
+            <p>Short description of the project.</p>
+          </figcaption>
+        </figure>
+      </article>
+
+      <a href="/projects.html">+ See More</a>
+    </section>
+
+    <section aria-labelledby="blog-heading">
+      <h2 id="blog-heading">Blog</h2>
+      <article>
+        <h3>Latest Post Title</h3>
+        <p>Brief excerpt from the latest blog post.</p>
+        <a href="/blog/post1.html">Read More</a>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <nav>
+      <section>
+        <h4><a href="/uses.html">/uses</a></h4>
+        <p>Tools and technologies I use</p>
+        <ul>
+          <li><a href="mailto:jay@example.com">Email</a></li>
+          <li><a href="https://github.com/jay-cam">GitHub</a></li>
+        </ul>
       </section>
-
-      <section aria-labelledby="blog-heading">
-        <h2 id="blog-heading">Blog</h2>
-
-        <article>
-          <h3>Latest Post Title</h3>
-          <p>Brief excerpt from the latest blog post.</p>
-          <a href="/blog/post1.html">Read More</a>
-        </article>
+      <section>
+        <h4><a href="/now.html">/now</a></h4>
+        <p>What I’m currently working on</p>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/jay-campbell/">LinkedIn</a></li>
+        </ul>
       </section>
-    </main>
-
-    <footer>
-      <nav>
-        <section>
-          <h4><a href="/uses.html">/uses</a></h4>
-          <p>Tools and technologies I use</p>
-          <ul>
-            <li><a href="mailto:jay@example.com">Email</a></li>
-            <li><a href="https://github.com/jay-cam">GitHub</a></li>
-          </ul>
-        </section>
-
-        <section>
-          <h4><a href="/now.html">/now</a></h4>
-          <p>What I’m currently working on</p>
-          <ul>
-            <li>
-              <a href="https://www.linkedin.com/in/jay-campbell/">LinkedIn</a>
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h4><a href="/colophon.html">/colophon</a></h4>
-          <p>About this site and its creation</p>
-          <ul>
-            <li><cite>Self-hosted on Netlify</cite></li>
-          </ul>
-        </section>
-
-        <section aria-labelledby="audioIntro">
-          <h2 id="audioIntro" hidden>Audio Introduction</h2>
-          <p>Here's a short audio introduction:</p>
-          <audio controls>
-            <source src="audio/intro.mp3" type="audio/mpeg" />
-            <p>Your browser does not support the audio element.</p>
-          </audio>
-        </section>
-      </nav>
-    </footer>
-  </body>
+      <section>
+        <h4><a href="/colophon.html">/colophon</a></h4>
+        <p>About this site and its creation</p>
+        <ul>
+          <li><cite>Self-hosted on Netlify</cite></li>
+        </ul>
+      </section>
+      <section aria-labelledby="audioIntro">
+        <h2 id="audioIntro" hidden>Audio Introduction</h2>
+        <p>Here's a short audio introduction:</p>
+        <audio controls>
+          <source src="/audio/intro.mp3" type="audio/mpeg">
+          <p>Your browser does not support the audio element.</p>
+        </audio>
+      </section>
+    </nav>
+  </footer>
+</body>
 </html>
