@@ -1,147 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Labs &amp; Experiments – Jay Campbell</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Labs &amp; Experiments – Jay Campbell</title>
+  <style>
+    /* your existing CSS… */
+  </style>
+  <script>
+    /* your existing JS… */
+  </script>
+</head>
+<body>
+  <main>
+    <section>
+      <h2>Blockquote Demo</h2>
+      <blockquote cite="https://example.com">
+        <p>“Code is like humor. When you have to explain it, it’s bad.”</p>
+        <cite>— Cory House</cite>
+      </blockquote>
+    </section>
 
-    <!-- CSS-only custom element styling -->
-    <style>
-      fancy-box {
-        display: block;
-        margin: 1em 0;
-        padding: 1em;
-        border: 2px dashed #666;
-        border-radius: 4px;
-        font-family: sans-serif;
-      }
-      fancy-box[variant="alert"] {
-        border-color: #c00;
-        background: #fee;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/projects.html">Projects</a>
-        <a href="/labs.html" aria-current="page">Labs</a>
-      </nav>
-      <h1>Labs &amp; Experiments</h1>
-      <p>Sandbox for custom elements and HTML-only demos.</p>
-    </header>
+    <section>
+      <h2>Canvas &amp; SVG</h2>
+      <canvas width="200" height="100">
+        Your browser doesn’t support canvas.
+      </canvas>
+      <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" fill="lightblue"></circle>
+      </svg>
+    </section>
 
-    <main>
-      <!-- CSS-only custom element -->
-      <section>
-        <h2>Semantic CSS Element: &lt;fancy-box&gt;</h2>
-        <fancy-box>Default fancy box content.</fancy-box>
-        <fancy-box variant="alert">Alert-style fancy box content.</fancy-box>
-      </section>
+    <section>
+      <h2>Video &amp; IFrame</h2>
+      <video controls>
+        <source src="video/sample.mp4" type="video/mp4">
+        Sorry, your browser doesn’t support video.
+      </video>
 
-      <!-- Blockquote & Cite -->
-      <section>
-        <h2>Blockquote &amp; Cite</h2>
-        <blockquote cite="https://example.com">
-          <p>“Code is like humor. When you have to explain it, it’s bad.”</p>
-          <cite>— Cory House</cite>
-        </blockquote>
-      </section>
+      <!-- obsolete frameborder removed; border hidden via CSS instead -->
+      <iframe
+        width="300"
+        height="150"
+        src="https://www.youtube.com/embed/qz0aGYrrlhU?si=eCCKj7LiiTPpA-_S"
+        title="YouTube video player"
+        style="border:none;"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </section>
 
-      <!-- Canvas & SVG -->
-      <section>
-        <h2>Canvas &amp; SVG</h2>
-        <canvas width="200" height="100">
-          Your browser doesn’t support canvas.
-        </canvas>
-        <svg width="100" height="100">
-          <circle cx="50" cy="50" r="40" fill="lightblue"></circle>
-        </svg>
-      </section>
+    <section>
+      <h2>Details &amp; Dialog</h2>
+      <details>
+        <summary>More info</summary>
+        <p>This is hidden until you click “More info.”</p>
+      </details>
 
-      <!-- Video & IFrame -->
-      <section>
-        <h2>Video &amp; IFrame</h2>
-        <video controls>
-          <source src="video/sample.mp4" type="video/mp4" />
-          Sorry, your browser doesn’t support video.
-        </video>
-        <iframe
-          width="300"
-          height="150"
-          src="https://www.youtube.com/embed/qz0aGYrrlhU?si=eCCKj7LiiTPpA-_S"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        >
-        </iframe>
-      </section>
+      <button id="openDlg">Open Dialog</button>
+      <dialog id="dlg">
+        <p>This is a dialog box.</p>
+        <button onclick="dlg.close()">Close</button>
+      </dialog>
+      <script>
+        const dlg = document.getElementById('dlg');
+        document.getElementById('openDlg').onclick = () => dlg.showModal();
+      </script>
+    </section>
 
-      <!-- Details & Dialog (static open) -->
-      <section>
-        <h2>Details &amp; Dialog</h2>
-        <details>
-          <summary>More info</summary>
-          <p>This is hidden until you click “More info.”</p>
-        </details>
+    <section>
+      <h2>Template Example</h2>
+      <template id="tpl">
+        <div>Template content goes here.</div>
+      </template>
+      <div id="out"></div>
+      <script>
+        document.getElementById('out')
+          .appendChild(
+            document.getElementById('tpl')
+              .content
+              .cloneNode(true)
+          );
+      </script>
+    </section>
 
-        <!-- Static dialog without script -->
-        <dialog open>
-          <p>This dialog is permanently open (no JS needed).</p>
-        </dialog>
-      </section>
+    <section>
+      <h2>Search &amp; Form Controls</h2>
+      <search>
+        <label for="q">Search:</label>
+        <input type="search" id="q" name="q">
+      </search>
 
-      <!-- Template (static demonstration) -->
-      <section>
-        <h2>Template Example</h2>
-        <template id="tpl">
-          <div>This is template content (not rendered).</div>
-        </template>
-        <div>
-          <!-- To “use” it, we simply show the template markup as code -->
-          <pre><code>&lt;template id="tpl"&gt;…&lt;/template&gt;</code></pre>
-        </div>
-      </section>
+      <form>
+        <fieldset>
+          <legend>Select Example</legend>
+          <label for="sel">Pick one:</label>
+          <select id="sel" name="sel">
+            <optgroup label="Group A">
+              <option value="a1">Alpha</option>
+              <option value="a2">Beta</option>
+            </optgroup>
+            <option value="g1">Gamma</option>
+          </select>
+        </fieldset>
 
-      <!-- Search & Form controls -->
-      <section>
-        <h2>Search &amp; Form Controls</h2>
-        <search>
-          <label for="q">Search:</label>
-          <input type="search" id="q" name="q" />
-        </search>
-
-        <form>
-          <fieldset>
-            <legend>Select Example</legend>
-            <label for="sel">Pick one:</label>
-            <select id="sel" name="sel">
-              <optgroup label="Group A">
-                <option value="a1">Alpha</option>
-                <option value="a2">Beta</option>
-              </optgroup>
-              <option value="g1">Gamma</option>
-            </select>
-          </fieldset>
-
-          <fieldset>
-            <legend>Datalist Example</legend>
-            <label for="dl">Choose:</label>
-            <input list="dl" id="dl" name="dl" />
-            <datalist id="dl">
-              <option value="One"></option>
-              <option value="Two"></option>
-            </datalist>
-          </fieldset>
-        </form>
-      </section>
-    </main>
-
-    <footer>
-      <p>© Jay Campbell</p>
-    </footer>
-  </body>
+        <fieldset>
+          <legend>Datalist Example</legend>
+          <label for="dl-input">Choose:</label>
+          <!-- changed id/list to dl-input & dl-list to avoid duplicates -->
+          <input list="dl-list" id="dl-input" name="dl-input">
+          <datalist id="dl-list">
+            <option value="One"></option>
+            <option value="Two"></option>
+          </datalist>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+</body>
 </html>
