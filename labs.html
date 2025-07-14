@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Labs – Jay Campbell</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Labs &amp; Experiments – Jay Campbell</title>
+
+  <!-- 1) CSS-only custom element styling -->
   <style>
-    /* ==== Semantic CSS Custom Element ==== */
     fancy-box {
       display: block;
-      padding: 1rem;
-      margin: 1rem 0;
+      margin: 1em 0;
+      padding: 1em;
       border: 2px dashed #666;
       border-radius: 4px;
-      background: #f9f9f9;
+      font-family: sans-serif;
     }
-    fancy-box[theme="alert"] {
-      border-color: crimson;
-      background: #ffe5e5;
+    fancy-box[variant="alert"] {
+      border-color: #c00;
+      background: #fee;
     }
   </style>
+
+  <!-- 2) Register both custom elements -->
+  <script>
+    // a) semantic CSS custom element (no JS behavior)
+    class FancyBox extends HTMLElement {}
+    customElements.define('fancy-box', FancyBox);
+
+    // b) Hello World element (logs to console when connected)
+    class HelloWorld extends HTMLElement {
+      connectedCallback() {
+        console.log('👋 Hello world from <hello-world>!');
+      }
+    }
+    customElements.define('hello-world', HelloWorld);
+  </script>
 </head>
+
 <body>
   <header>
     <nav>
@@ -32,38 +49,32 @@
   </header>
 
   <main>
-    <!-- Semantic CSS Custom Element demo -->
     <section>
       <h2>Semantic CSS Element: &lt;fancy-box&gt;</h2>
       <p>This block is a custom element styled purely with CSS.</p>
+
+      <!-- default style -->
       <fancy-box>
         Default fancy box.
       </fancy-box>
-      <fancy-box theme="alert">
-        Alert‐style fancy box.
+
+      <!-- alert variant -->
+      <fancy-box variant="alert">
+        Alert-style fancy box.
       </fancy-box>
     </section>
 
-    <!-- Hello World Custom Element demo -->
     <section>
       <h2>Hello World Element: &lt;hello-world&gt;</h2>
       <p>Open your console to see its message.</p>
+
+      <!-- placing it on the page triggers the log -->
       <hello-world></hello-world>
     </section>
+
+    <footer>
+      <p>© Jay Campbell</p>
+    </footer>
   </main>
-
-  <footer>
-    <p>© Jay Campbell</p>
-  </footer>
-
-  <script>
-    // ==== Hello World Custom Element ====
-    class HelloWorld extends HTMLElement {
-      connectedCallback() {
-        console.log('Hello world!');
-      }
-    }
-    customElements.define('hello-world', HelloWorld);
-  </script>
 </body>
 </html>
