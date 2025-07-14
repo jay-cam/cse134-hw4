@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Labs – Jay Campbell</title>
+  <style>
+    /* ==== Semantic CSS Custom Element ==== */
+    fancy-box {
+      display: block;
+      padding: 1rem;
+      margin: 1rem 0;
+      border: 2px dashed #666;
+      border-radius: 4px;
+      background: #f9f9f9;
+    }
+    fancy-box[theme="alert"] {
+      border-color: crimson;
+      background: #ffe5e5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/labs.html">Labs</a>
+    </nav>
+    <h1>Labs &amp; Experiments</h1>
+    <p>Sandbox for custom elements and tag demos.</p>
+  </header>
+
+  <main>
+    <!-- Semantic CSS Custom Element demo -->
+    <section>
+      <h2>Semantic CSS Element: &lt;fancy-box&gt;</h2>
+      <p>This block is a custom element styled purely with CSS.</p>
+      <fancy-box>
+        Default fancy box.
+      </fancy-box>
+      <fancy-box theme="alert">
+        Alert‐style fancy box.
+      </fancy-box>
+    </section>
+
+    <!-- Hello World Custom Element demo -->
+    <section>
+      <h2>Hello World Element: &lt;hello-world&gt;</h2>
+      <p>Open your console to see its message.</p>
+      <hello-world></hello-world>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Jay Campbell</p>
+  </footer>
+
+  <script>
+    // ==== Hello World Custom Element ====
+    class HelloWorld extends HTMLElement {
+      connectedCallback() {
+        console.log('Hello world!');
+      }
+    }
+    customElements.define('hello-world', HelloWorld);
+  </script>
+</body>
+</html>
