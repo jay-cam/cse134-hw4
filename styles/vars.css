@@ -1,10 +1,59 @@
+/* styles/vars.css */
+
+/* 1. Global Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. CSS Variables (with fallbacks) */
 :root {
-  --primary-color: #004080;
-  --secondary-color: #ffcc00;
-  --font-body: 'Roboto', sans-serif;
-  --font-size-base: 1rem;
-  --default-margin: 1.5em;
-  --default-padding: 1em;
-  --border-radius: 0.5em;
-  --transition-speed: 0.3s;
+  /* Font stack including fallback */
+  --font-family: 'Roboto', sans-serif;
+
+  /* Color palette */
+  --color-text: #333333;
+  --color-bg: #ffffff;
+  --color-primary: #005fa3;
+  --color-secondary: #007acc;
+
+  /* Spacing and sizing */
+  --spacing: 1rem;
+  --max-width: 1200px;
+
+  /* Transition speed */
+  --transition-duration: 0.3s;
+}
+
+/* 3. Base Styles */
+body {
+  font-family: var(--font-family, sans-serif);
+  color: var(--color-text, #333333);
+  background-color: var(--color-bg, #ffffff);
+  line-height: 1.6;
+  padding: var(--spacing);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* 4. Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary);
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/* 5. Link Styles */
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color var(--transition-duration) ease;
+}
+a:hover,
+a:focus {
+  color: var(--color-primary);
 }
