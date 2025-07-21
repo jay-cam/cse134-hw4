@@ -1,13 +1,13 @@
 /* styles/vars.css */
 
-/* 1. Global Reset & Box-Sizing */
+/* Global Reset & Box-Sizing */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* 2. CSS Variables */
+/* CSS Variables */
 :root {
   /* Font stack */
   --font-family: 'Roboto', sans-serif;
@@ -27,7 +27,7 @@
   --transition-duration: 0.3s;
 }
 
-/* 3. Base Styles */
+/* Base Styles */
 body {
   font-family: var(--font-family);
   background-color: var(--color-bg);
@@ -38,7 +38,7 @@ body {
   margin: 0 auto;
 }
 
-/* 4. Typography */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-heading);
   margin-bottom: 0.5em;
@@ -48,7 +48,7 @@ p {
   margin-bottom: 1em;
 }
 
-/* 5. Link Styles */
+/* Link Styles */
 a {
   color: var(--color-link);
   text-decoration: underline;
@@ -68,5 +68,23 @@ a:focus {
 /* Hide any <section> that ends up completely empty */
 section:has(:empty) {
   display: none;
+}
+
+
+figure {
+  transition: transform var(--transition-duration) ease;
+}
+figure:hover {
+  transform: scale(1.03);
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(1rem); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+main {
+  animation: fadeIn 0.8s ease-out;
 }
 
