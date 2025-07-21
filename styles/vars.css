@@ -1,45 +1,46 @@
 /* styles/vars.css */
 
-/* 1. Global Reset & Box Sizing */
+/* 1. Global Reset & Box-Sizing */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* 2. CSS Variables (with fallbacks) */
+/* 2. CSS Variables */
 :root {
-  /* Font stack including fallback */
+  /* Font stack */
   --font-family: 'Roboto', sans-serif;
 
-  /* Color palette */
-  --color-text: #333333;
+  /* Colors */
   --color-bg: #ffffff;
-  --color-primary: #005fa3;
-  --color-secondary: #007acc;
+  --color-text: #333333;        /* body copy */
+  --color-heading: #005fa3;     /* primary blue for headings */
+  --color-link: #004080;        /* dark blue (>=4.5:1 contrast on white) */
+  --color-link-hover: #00264d;  /* even darker on hover/focus */
 
-  /* Spacing and sizing */
+  /* Layout & spacing */
   --spacing: 1rem;
-  --max-width: 1200px;
+  --max-width: 60ch;            /* ~45–50 characters per line */
 
-  /* Transition speed */
+  /* Transitions */
   --transition-duration: 0.3s;
 }
 
 /* 3. Base Styles */
 body {
-  font-family: var(--font-family, sans-serif);
-  color: var(--color-text, #333333);
-  background-color: var(--color-bg, #ffffff);
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   line-height: 1.6;
   padding: var(--spacing);
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
-/* 4. Typography Helpers */
+/* 4. Typography */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--color-primary);
+  color: var(--color-heading);
   margin-bottom: 0.5em;
 }
 
@@ -49,11 +50,17 @@ p {
 
 /* 5. Link Styles */
 a {
-  color: var(--color-secondary);
-  text-decoration: none;
+  color: var(--color-link);
+  text-decoration: underline;
   transition: color var(--transition-duration) ease;
 }
+
 a:hover,
 a:focus {
-  color: var(--color-primary);
+  color: var(--color-link-hover);
+}
+
+a:focus {
+  outline: 2px dotted var(--color-link);
+  outline-offset: 2px;
 }
