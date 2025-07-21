@@ -101,10 +101,18 @@
         <article>
           <h3>Project Title 2</h3>
           <figure>
+            <picture>
+               <source
+                media="(min-width: 800px)"
+                srcset="images/placeholder-large.jpg">
+              <source
+                media="(min-width: 400px)"
+                srcset="images/placeholder-medium.jpg">             
+            </picture>
             <img
               src="images/placeholder.jpg"
               alt="Screenshot of Project 2"
-              width="300">
+              width="250">
             <figcaption>
               <p>Short description of the project.</p>
             </figcaption>
