@@ -1,0 +1,35 @@
+@import url("vars.css");
+
+/* Base styles */
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  margin: 0;
+  padding: var(--default-padding);
+  background-color: var(--primary-color);
+  color: white;
+  transition: background-color var(--transition-speed) ease-in-out;
+}
+
+/* Medium layout (641px–1023px) */
+body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--default-margin);
+}
+
+header,
+nav,
+main,
+footer {
+  padding: var(--default-padding);
+}
+
+/* Horizontal nav menu */
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

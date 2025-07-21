@@ -1,0 +1,39 @@
+/* styles/wide.css */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr minmax(0, var(--max-width)) 1fr;
+  grid-template-areas:
+    ". header ."
+    ". main   ."
+    ". footer .";
+  gap: var(--spacing);
+  min-height: 100vh;
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+header {
+  grid-area: header;
+  padding: var(--spacing) 0;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing);
+}
+
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing);
+}
+
+footer {
+  grid-area: footer;
+  padding: var(--spacing) 0;
+  text-align: center;
+}

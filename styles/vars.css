@@ -1,0 +1,10 @@
+:root {
+  --primary-color: #004080;
+  --secondary-color: #ffcc00;
+  --font-body: 'Roboto', sans-serif;
+  --font-size-base: 1rem;
+  --default-margin: 1.5em;
+  --default-padding: 1em;
+  --border-radius: 0.5em;
+  --transition-speed: 0.3s;
+}
