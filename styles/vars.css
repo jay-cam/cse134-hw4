@@ -64,3 +64,9 @@ a:focus {
   outline: 2px dotted var(--color-link);
   outline-offset: 2px;
 }
+
+/* Hide any <section> that ends up completely empty */
+section:has(:empty) {
+  display: none;
+}
+
