@@ -2,29 +2,49 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jay Campbell’s portfolio and digital garden">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+      name="description"
+      content="Jay Campbell’s portfolio and digital garden"
+    >
 
     <title>Jay Campbell – Portfolio</title>
 
     <!-- Preconnect for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    >
     <!-- Load Roboto with font-display=swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    >
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="styles/main.css">
   </head>
+
   <body>
     <noscript>
-      <p>JavaScript is disabled in your browser—some features may not work.</p>
+      <p>
+        JavaScript is disabled in your browser—some features may not
+        work.
+      </p>
     </noscript>
 
     <header>
       <!-- Hamburger toggle for mobile -->
-      <button class="menu-toggle" aria-label="Open menu">☰</button>
-      
+      <button
+        class="menu-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >☰</button>
+
       <nav>
         <a href="/">Home</a>
         <a href="/now.html">Now</a>
@@ -40,8 +60,8 @@
       <hr>
 
       <p>
-        I'm a <strong>software developer</strong> passionate about creating
-        impactful projects using modern technologies like
+        I'm a <strong>software developer</strong> passionate about
+        creating impactful projects using modern technologies like
         <abbr title="HyperText Markup Language">HTML</abbr> and
         <abbr title="Cascading Style Sheets">CSS</abbr>. Welcome to my
         portfolio!
@@ -64,14 +84,50 @@
           <figure>
             <picture>
               <!-- Desktop: large or medium -->
-              <source media="(min-width:1024px)" type="image/webp" srcset="images/project1-large.webp 1200w, images/project1-medium.webp 800w">
-              <source media="(min-width:1024px)" type="image/jpeg" srcset="images/project1-large.jpg 1200w, images/project1-medium.jpg 800w">
+              <source
+                media="(min-width:1024px)"
+                type="image/webp"
+                srcset="
+                  images/project1-large.webp 1200w,
+                  images/project1-medium.webp 800w
+                "
+                sizes="(min-width:1024px) 1200px, 100vw"
+              >
+              <source
+                media="(min-width:1024px)"
+                type="image/jpeg"
+                srcset="
+                  images/project1-large.jpg 1200w,
+                  images/project1-medium.jpg 800w
+                "
+                sizes="(min-width:1024px) 1200px, 100vw"
+              >
+
               <!-- Tablet: medium -->
-              <source media="(min-width:640px)" type="image/webp" srcset="images/project1-medium.webp 800w">
-              <source media="(min-width:640px)" type="image/jpeg" srcset="images/project1-medium.jpg 800w">
+              <source
+                media="(min-width:640px)"
+                type="image/webp"
+                srcset="images/project1-medium.webp 800w"
+                sizes="(min-width:640px) 800px, 100vw"
+              >
+              <source
+                media="(min-width:640px)"
+                type="image/jpeg"
+                srcset="images/project1-medium.jpg 800w"
+                sizes="(min-width:640px) 800px, 100vw"
+              >
+
               <!-- Mobile: small -->
-              <source type="image/webp" srcset="images/project1-small.webp 400w">
-              <img src="images/project1-small.jpg" alt="Screenshot of Project 1" class="thumbnail">
+              <source
+                type="image/webp"
+                srcset="images/project1-small.webp 400w"
+                sizes="400px"
+              >
+              <img
+                src="images/project1-small.jpg"
+                alt="Screenshot of Project 1"
+                class="thumbnail"
+              >
             </picture>
             <figcaption>Brief description of the project.</figcaption>
           </figure>
@@ -83,14 +139,50 @@
           <figure>
             <picture>
               <!-- Desktop: large or medium -->
-              <source media="(min-width:1024px)" type="image/webp" srcset="images/project2-large.webp 1200w, images/project2-medium.webp 800w">
-              <source media="(min-width:1024px)" type="image/jpeg" srcset="images/project2-large.jpg 1200w, images/project2-medium.jpg 800w">
+              <source
+                media="(min-width:1024px)"
+                type="image/webp"
+                srcset="
+                  images/project2-large.webp 1200w,
+                  images/project2-medium.webp 800w
+                "
+                sizes="(min-width:1024px) 1200px, 100vw"
+              >
+              <source
+                media="(min-width:1024px)"
+                type="image/jpeg"
+                srcset="
+                  images/project2-large.jpg 1200w,
+                  images/project2-medium.jpg 800w
+                "
+                sizes="(min-width:1024px) 1200px, 100vw"
+              >
+
               <!-- Tablet: medium -->
-              <source media="(min-width:640px)" type="image/webp" srcset="images/project2-medium.webp 800w">
-              <source media="(min-width:640px)" type="image/jpeg" srcset="images/project2-medium.jpg 800w">
+              <source
+                media="(min-width:640px)"
+                type="image/webp"
+                srcset="images/project2-medium.webp 800w"
+                sizes="(min-width:640px) 800px, 100vw"
+              >
+              <source
+                media="(min-width:640px)"
+                type="image/jpeg"
+                srcset="images/project2-medium.jpg 800w"
+                sizes="(min-width:640px) 800px, 100vw"
+              >
+
               <!-- Mobile: small -->
-              <source type="image/webp" srcset="images/project2-small.webp 400w">
-              <img src="images/project2-small.jpg" alt="Screenshot of Project 2" class="thumbnail">
+              <source
+                type="image/webp"
+                srcset="images/project2-small.webp 400w"
+                sizes="400px"
+              >
+              <img
+                src="images/project2-small.jpg"
+                alt="Screenshot of Project 2"
+                class="thumbnail"
+              >
             </picture>
             <figcaption>Brief description of the project.</figcaption>
           </figure>
@@ -103,19 +195,58 @@
       <section aria-labelledby="blog-heading">
         <h2 id="blog-heading">Blog</h2>
 
-        <article aria-labelledby="blog-thumb-heading" class="blog-thumb">
+        <article
+          aria-labelledby="blog-thumb-heading"
+          class="blog-thumb"
+        >
           <h3 id="blog-thumb-heading">Latest Post</h3>
           <figure>
             <picture>
               <!-- Desktop: large or medium -->
-              <source media="(min-width:1024px)" type="image/webp" srcset="images/blog-large.webp 1200w, images/blog-medium.webp 800w">
-              <source media="(min-width:1024px)" type="image/jpeg" srcset="images/blog-large.jpg 1200w, images/blog-medium.jpg 800w">
+              <source
+                media="(min-width:1024px)"
+                type="image/webp"
+                srcset="
+                  images/blog-large.webp 1200w,
+                  images/blog-medium.webp 800w
+                "
+                sizes="(min-width:1024px) 1200px, 100vw"
+              >
+              <source
+                media="(min-width:1024px)"
+                type="image/jpeg"
+                srcset="
+                  images/blog-large.jpg 1200w,
+                  images/blog-medium.jpg 800w
+                "
+                sizes="(min-width:1024px) 1200px, 100vw"
+              >
+
               <!-- Tablet: medium -->
-              <source media="(min-width:640px)" type="image/webp" srcset="images/blog-medium.webp 800w">
-              <source media="(min-width:640px)" type="image/jpeg" srcset="images/blog-medium.jpg 800w">
+              <source
+                media="(min-width:640px)"
+                type="image/webp"
+                srcset="images/blog-medium.webp 800w"
+                sizes="(min-width:640px) 800px, 100vw"
+              >
+              <source
+                media="(min-width:640px)"
+                type="image/jpeg"
+                srcset="images/blog-medium.jpg 800w"
+                sizes="(min-width:640px) 800px, 100vw"
+              >
+
               <!-- Mobile: small -->
-              <source type="image/webp" srcset="images/blog-small.webp 400w">
-              <img src="images/blog-small.jpg" alt="Illustration for blog" class="thumbnail">
+              <source
+                type="image/webp"
+                srcset="images/blog-small.webp 400w"
+                sizes="400px"
+              >
+              <img
+                src="images/blog-small.jpg"
+                alt="Illustration for blog"
+                class="thumbnail"
+              >
             </picture>
             <figcaption>
               <p>Brief excerpt from the latest blog post.</p>
@@ -123,7 +254,6 @@
           </figure>
           <a href="/blog/post1.html">Read More</a>
         </article>
-
       </section>
     </main>
 
@@ -134,7 +264,9 @@
           <p>Tools and technologies I use</p>
           <ul>
             <li><a href="mailto:jay@example.com">Email</a></li>
-            <li><a href="https://github.com/jay-cam">GitHub</a></li>
+            <li>
+              <a href="https://github.com/jay-cam">GitHub</a>
+            </li>
           </ul>
         </section>
 
@@ -142,7 +274,11 @@
           <h4><a href="/now.html">/now</a></h4>
           <p>What I’m currently working on</p>
           <ul>
-            <li><a href="https://www.linkedin.com/in/jay-campbell/">LinkedIn</a></li>
+            <li>
+              <a href="https://www.linkedin.com/in/jay-campbell/"
+                >LinkedIn</a
+              >
+            </li>
           </ul>
         </section>
 
@@ -158,7 +294,10 @@
           <h2 id="audioIntro" hidden>Audio Introduction</h2>
           <p>Here's a short audio introduction:</p>
           <audio controls>
-            <source src="audio/intro.mp3" type="audio/mpeg">
+            <source
+              src="audio/intro.mp3"
+              type="audio/mpeg"
+            >
             <p>Your browser does not support the audio element.</p>
           </audio>
         </section>
