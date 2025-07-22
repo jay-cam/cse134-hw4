@@ -172,3 +172,12 @@ article {
   margin-bottom: var(--spacing);
 }
 
+/* make all .thumbnail images scale to their grid cell */
+.thumbnail {
+  width: 100%;           /* fill the width of its container */
+  height: auto;          /* keep aspect-ratio */
+  object-fit: cover;     /* crop if container height is fixed */
+  object-position: center;
+  display: block;        /* remove any inline whitespace */
+}
+
