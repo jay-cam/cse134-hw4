@@ -85,7 +85,7 @@ header {
   background: #fff;
 }
 header nav {
-  display: flex;
+  display: none;           /* hide on mobile */
   justify-content: center;
   gap: var(--spacing);
   flex-wrap: wrap;
@@ -154,7 +154,7 @@ article {
   }
 }
 
-/* 14) Responsive media query */
+/* 14) Responsive media query (font-size tweak) */
 @media (max-width: 768px) {
   :root {
     --spacing: 0.75rem;
@@ -164,57 +164,50 @@ article {
   }
 }
 
+/* Banner images */
 .banner-image {
   width: 100%;
-  height: 40dvh;           /* adjust as needed */
+  height: 40dvh;
   object-fit: cover;
   object-position: center;
   margin-bottom: var(--spacing);
 }
 
-/* make all .thumbnail images scale to their grid cell */
+/* Thumbnail images */
 .thumbnail {
   display: block;
   width: 100%;
   height: auto;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.3s ease;   /* smooth hover */
+  transition: transform 0.3s ease;
 }
-
-/* Clip the image when it grows — apply to the <figure> */
 figure {
   overflow: hidden;
 }
-
-/* On hover, gently zoom in */
 .thumbnail:hover {
   transform: scale(1.05);
 }
-
-/* Constrain the blog preview on the homepage */
 .blog-thumb .thumbnail {
   width: 100%;
-  height: 200px;        /* choose a height that feels right */
-  object-fit: cover;    /* crop to fill the box */
+  height: 200px;
+  object-fit: cover;
   object-position: center;
   display: block;
   margin-bottom: var(--spacing);
 }
 
-/* Mobile first: nav hidden, toggle shown by default */
+/* 15) Mobile menu toggle */
 .menu-toggle {
   display: block;
 }
 
-/* Tablet+ (≥641px): hide the burger, always show nav */
+/* 16) Tablet+ nav reveal */
 @media (min-width: 641px) {
   .menu-toggle {
     display: none;
   }
   header nav {
-    display: flex !important;  /* override the mobile “display: none” */
+    display: flex;
   }
 }
-
-
