@@ -59,46 +59,31 @@
         <h2 id="projects-heading">Featured Projects</h2>
 
         <article>
-          <h3>Project Title 1</h3>
-          <figure>
-            <picture>
-              <source
-                media="(min-width: 800px)"
-                srcset="images/placeholder-large.jpg">
-              <source
-                media="(min-width: 400px)"
-                srcset="images/placeholder-medium.jpg">
-              <img
-                src="images/placeholder-small.jpg"
-                alt="Screenshot of Project 1"
-                width="250">
-            </picture>
-            <figcaption>
-              <p>Short description of the project.</p>
-            </figcaption>
-          </figure>
-        </article>
+      <article aria-labelledby="proj1-heading">
+        <h2 id="proj1-heading">Project 1</h2>
+        <figure>
+          <picture>
+            <source type="image/webp" srcset="images/project1.webp">
+            <source type="image/jpeg" srcset="images/project1.jpg">
+            <img src="images/project1.jpg" alt="Screenshot of Project 1" class="thumbnail">
+          </picture>
+          <figcaption>Brief description of Project 1.</figcaption>
+        </figure>
+        <a href="/projects/proj1.html">View Project</a>
+      </article>
 
-        <article>
-          <h3>Project Title 2</h3>
-          <figure>
-            <picture>
-              <source
-                media="(min-width: 800px)"
-                srcset="images/placeholder-large.jpg">
-              <source
-                media="(min-width: 400px)"
-                srcset="images/placeholder-medium.jpg">
-              <img
-                src="images/placeholder.jpg"
-                alt="Screenshot of Project 2"
-                width="300">
-            </picture>
-            <figcaption>
-              <p>Short description of the project.</p>
-            </figcaption>
-          </figure>
-        </article>
+      <article aria-labelledby="proj2-heading">
+        <h2 id="proj2-heading">Project 2</h2>
+        <figure>
+          <picture>
+            <source type="image/webp" srcset="images/project2.webp">
+            <source type="image/jpeg" srcset="images/project2.jpg">
+            <img src="images/project2.jpg" alt="Screenshot of Project 2" class="thumbnail">
+          </picture>
+          <figcaption>Brief description of Project 2.</figcaption>
+        </figure>
+        <a href="/projects/proj2.html">View Project</a>
+      </article>
 
         <a href="/projects.html">+ See More</a>
       </section>
