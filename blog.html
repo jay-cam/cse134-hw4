@@ -38,11 +38,18 @@
       
       <figure class="banner">
         <picture>
-          <source type="image/jpeg" srcset="images/blog.jpg">
+          <!-- Desktop: large or medium -->
+          <source media="(min-width:1024px)" type="image/webp" srcset="images/blog-large.webp 1200w, images/blog-medium.webp 800w">
+          <source media="(min-width:1024px)" type="image/jpeg" srcset="images/blog-large.jpg 1200w, images/blog-medium.jpg 800w">
+          <!-- Tablet: medium -->
+          <source media="(min-width:640px)" type="image/webp" srcset="images/blog-medium.webp 800w">
+          <source media="(min-width:640px)" type="image/jpeg" srcset="images/blog-medium.jpg 800w">
+          <!-- Mobile: small -->
+          <source type="image/webp" srcset="images/blog-small.webp 400w">
           <img
-          src="images/blog.jpg"
-          alt="Illustration for the blog home page"
-          class="banner-image">
+            src="images/blog-small.jpg"
+            alt="Illustration for the blog home page"
+            class="banner-image">
         </picture>
       </figure>
     </header>
