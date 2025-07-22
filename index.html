@@ -32,9 +32,7 @@
         <a href="/sitemap.html">Sitemap</a>
       </nav>
 
-      <hgroup>
-        <h1>Hi, I’m Jay Campbell</h1>
-      </hgroup>
+      <h1>Hi, I’m Jay Campbell</h1>
       <h2>Building things on the web</h2>
       <hr>
 
@@ -52,65 +50,77 @@
     <main>
       <section aria-labelledby="intro-div">
         <h2 id="intro-div">Intro</h2>
-        <div><span>Welcome to my portfolio site.</span><br></div>
+        <p>Welcome to my portfolio site.</p>
       </section>
 
       <section aria-labelledby="projects-heading">
         <h2 id="projects-heading">Featured Projects</h2>
 
-        <article>
-      <article aria-labelledby="proj1-heading">
-        <h2 id="proj1-heading">Project 1</h2>
-        <figure>
-          <picture>
-            <source type="image/jpeg" srcset="images/project1.jpg">
-            <img src="images/project1.jpg" alt="Screenshot of Project 1" class="thumbnail">
-          </picture>
-          <figcaption>Brief description of Project 1.</figcaption>
-        </figure>
-        <a href="/projects/proj1.html">View Project</a>
-      </article>
+        <article aria-labelledby="proj1-heading">
+          <h3 id="proj1-heading">Project 1</h3>
+          <figure>
+            <picture>
+              <!-- Desktop: large or medium -->
+              <source media="(min-width:1024px)" type="image/webp" srcset="images/project1-large.webp 1200w, images/project1-medium.webp 800w">
+              <source media="(min-width:1024px)" type="image/jpeg" srcset="images/project1-large.jpg 1200w, images/project1-medium.jpg 800w">
+              <!-- Tablet: medium -->
+              <source media="(min-width:640px)" type="image/webp" srcset="images/project1-medium.webp 800w">
+              <source media="(min-width:640px)" type="image/jpeg" srcset="images/project1-medium.jpg 800w">
+              <!-- Mobile: small -->
+              <source type="image/webp" srcset="images/project1-small.webp 400w">
+              <img src="images/project1-small.jpg" alt="Screenshot of Project 1" class="thumbnail">
+            </picture>
+            <figcaption>Brief description of the project.</figcaption>
+          </figure>
+          <a href="/projects/proj1.html">View Project</a>
+        </article>
 
-      <article aria-labelledby="proj2-heading">
-        <h2 id="proj2-heading">Project 2</h2>
-        <figure>
-          <picture>
-            <source type="image/jpeg" srcset="images/project2.jpg">
-            <img src="images/project2.jpg" alt="Screenshot of Project 2" class="thumbnail">
-          </picture>
-          <figcaption>Brief description of Project 2.</figcaption>
-        </figure>
-        <a href="/projects/proj2.html">View Project</a>
-      </article>
+        <article aria-labelledby="proj2-heading">
+          <h3 id="proj2-heading">Project 2</h3>
+          <figure>
+            <picture>
+              <!-- Desktop: large or medium -->
+              <source media="(min-width:1024px)" type="image/webp" srcset="images/project2-large.webp 1200w, images/project2-medium.webp 800w">
+              <source media="(min-width:1024px)" type="image/jpeg" srcset="images/project2-large.jpg 1200w, images/project2-medium.jpg 800w">
+              <!-- Tablet: medium -->
+              <source media="(min-width:640px)" type="image/webp" srcset="images/project2-medium.webp 800w">
+              <source media="(min-width:640px)" type="image/jpeg" srcset="images/project2-medium.jpg 800w">
+              <!-- Mobile: small -->
+              <source type="image/webp" srcset="images/project2-small.webp 400w">
+              <img src="images/project2-small.jpg" alt="Screenshot of Project 2" class="thumbnail">
+            </picture>
+            <figcaption>Brief description of the project.</figcaption>
+          </figure>
+          <a href="/projects/proj2.html">View Project</a>
+        </article>
 
         <a href="/projects.html">+ See More</a>
       </section>
 
       <section aria-labelledby="blog-heading">
         <h2 id="blog-heading">Blog</h2>
-        
+
         <article aria-labelledby="blog-thumb-heading" class="blog-thumb">
           <h3 id="blog-thumb-heading">Latest Post</h3>
           <figure>
             <picture>
-              <source type="image/jpeg" srcset="images/blog.jpg">
-              <img
-              src="images/blog.jpg"
-              alt="Illustration for blog"
-              class="thumbnail">
+              <!-- Desktop: large or medium -->
+              <source media="(min-width:1024px)" type="image/webp" srcset="images/blog-large.webp 1200w, images/blog-medium.webp 800w">
+              <source media="(min-width:1024px)" type="image/jpeg" srcset="images/blog-large.jpg 1200w, images/blog-medium.jpg 800w">
+              <!-- Tablet: medium -->
+              <source media="(min-width:640px)" type="image/webp" srcset="images/blog-medium.webp 800w">
+              <source media="(min-width:640px)" type="image/jpeg" srcset="images/blog-medium.jpg 800w">
+              <!-- Mobile: small -->
+              <source type="image/webp" srcset="images/blog-small.webp 400w">
+              <img src="images/blog-small.jpg" alt="Illustration for blog" class="thumbnail">
             </picture>
             <figcaption>
               <p>Brief excerpt from the latest blog post.</p>
-             </figcaption>
-            </figure>
-            <a href="/blog/post1.html">Read More</a>
-          </article>
-
-        <article>
-          <h3>Latest Post Title</h3>
-          <p>Brief excerpt from the latest blog post.</p>
+            </figcaption>
+          </figure>
           <a href="/blog/post1.html">Read More</a>
         </article>
+
       </section>
     </main>
 
