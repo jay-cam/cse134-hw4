@@ -3,37 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta
-      name="description"
-      content="Jay Campbell's portfolio and digital garden"
-    >
-    <!-- load Roboto from Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-  rel="stylesheet"
-/>
-
-<!-- CSS modules -->
-<link rel="stylesheet" href="styles/vars.css" />
-<link
-  rel="stylesheet"
-  media="screen and (min-width: 1024px)"
-  href="styles/wide.css"
-/>
-<link
-  rel="stylesheet"
-  media="screen and (min-width: 641px) and (max-width: 1023px)"
-  href="styles/medium.css"
-/>
-<link
-  rel="stylesheet"
-  media="screen and (max-width: 640px)"
-  href="styles/narrow.css"
-/>
+    <meta name="description" content="Jay Campbell’s portfolio and digital garden">
 
     <title>Jay Campbell – Portfolio</title>
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Load Roboto with font-display=swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
     <noscript>
@@ -88,7 +69,7 @@
                 media="(min-width: 400px)"
                 srcset="images/placeholder-medium.jpg">
               <img
-                src="images/placeholder.jpg"
+                src="images/placeholder-small.jpg"
                 alt="Screenshot of Project 1"
                 width="250">
             </picture>
@@ -102,16 +83,16 @@
           <h3>Project Title 2</h3>
           <figure>
             <picture>
-               <source
+              <source
                 media="(min-width: 800px)"
                 srcset="images/placeholder-large.jpg">
               <source
                 media="(min-width: 400px)"
-                srcset="images/placeholder-medium.jpg">   
+                srcset="images/placeholder-medium.jpg">
               <img
                 src="images/placeholder.jpg"
                 alt="Screenshot of Project 2"
-                width="250">          
+                width="300">
             </picture>
             <figcaption>
               <p>Short description of the project.</p>
@@ -148,9 +129,7 @@
           <h4><a href="/now.html">/now</a></h4>
           <p>What I’m currently working on</p>
           <ul>
-            <li>
-              <a href="https://www.linkedin.com/in/jay-campbell/">LinkedIn</a>
-            </li>
+            <li><a href="https://www.linkedin.com/in/jay-campbell/">LinkedIn</a></li>
           </ul>
         </section>
 
