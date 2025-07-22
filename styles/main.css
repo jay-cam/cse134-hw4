@@ -202,4 +202,19 @@ figure {
   margin-bottom: var(--spacing);
 }
 
+/* Mobile first: nav hidden, toggle shown by default */
+.menu-toggle {
+  display: block;
+}
+
+/* Tablet+ (≥641px): hide the burger, always show nav */
+@media (min-width: 641px) {
+  .menu-toggle {
+    display: none;
+  }
+  header nav {
+    display: flex !important;  /* override the mobile “display: none” */
+  }
+}
+
 
