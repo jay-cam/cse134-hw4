@@ -174,10 +174,21 @@ article {
 
 /* make all .thumbnail images scale to their grid cell */
 .thumbnail {
-  width: 100%;           /* fill the width of its container */
-  height: auto;          /* keep aspect-ratio */
-  object-fit: cover;     /* crop if container height is fixed */
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   object-position: center;
-  display: block;        /* remove any inline whitespace */
+  transition: transform 0.3s ease;   /* smooth hover */
+}
+
+/* Clip the image when it grows — apply to the <figure> */
+figure {
+  overflow: hidden;
+}
+
+/* On hover, gently zoom in */
+.thumbnail:hover {
+  transform: scale(1.05);
 }
 
