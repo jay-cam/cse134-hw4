@@ -255,6 +255,58 @@
           <a href="/blog/post1.html">Read More</a>
         </article>
       </section>
+      <!-- ——— CONTACT FORM ——— -->
+      <section aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact Me</h2>
+        <form
+          action="https://httpbin.org/post"
+          method="post"
+          novalidate
+        >
+          <!-- honeypot for bots -->
+          <input
+            type="hidden"
+            name="possible_bot"
+            value="true"
+          >
+
+          <fieldset>
+            <legend>Send me a message</legend>
+
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              maxlength="50"
+            >
+
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+            >
+
+            <label for="comments">Comments</label>
+            <textarea
+              id="comments"
+              name="comments"
+              rows="6"
+              required
+            ></textarea>
+
+            <button type="submit">Send</button>
+          </fieldset>
+
+          <!-- Part 2 styling hooks: stack‐labels, outputs -->
+          <output id="error-message" role="alert"></output>
+          <output id="info-message"></output>
+        </form>
+      </section>
+
     </main>
 
     <footer>
