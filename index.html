@@ -291,9 +291,9 @@
               required
             >
 
-            <label for="comments">Comments <span aria-hidden="true">*</span></label>
+            <label for="message">Comments <span aria-hidden="true">*</span></label>
             <textarea
-              id="comments"
+              id="message"
               name="comments"
               rows="6"
               required
@@ -303,6 +303,9 @@
 
             <button type="submit">Send</button>
           </fieldset>
+          
+          <!-- record all JS errors here for submission -->
+          <input type="hidden" name="form-errors" id="form-errors" value="[]"> 
 
           <!-- Part 2 styling hooks: stack‐labels, outputs -->
           <output class="error" aria-live="polite"></output>
@@ -358,5 +361,7 @@
         </section>
       </nav>
     </footer>
+
+    <script type="module" src="/scripts/form.js" defer></script>
   </body>
 </html>
