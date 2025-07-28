@@ -54,3 +54,26 @@ form.addEventListener('submit', e => {
   // otherwise serialize our JS errors into the hidden field
   errorsField.value = JSON.stringify(form_errors);
 });
+
+// — theme‐toggle.js (you can append into form.js if you prefer)
+
+const toggle = document.getElementById('theme-toggle');
+if (toggle) {
+  // 1) un‐hide the button
+  toggle.hidden = false;
+
+  // 2) pick up saved theme or default to light
+  const saved = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', saved);
+  // set the correct icon
+  toggle.textContent = (saved === 'dark' ? '☀️' : '🌙');
+
+  // 3) switching logic
+  toggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = (current === 'light' ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', next);
+    toggle.textContent = next === 'dark' ? '☀️' : '🌙';
+    localStorage.setItem('theme', next);
+  });
+}

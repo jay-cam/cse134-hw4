@@ -23,23 +23,47 @@
 }
 
 /* 3) Root variables with fallbacks */
+/*    plus theme‐specific overrides below */
 :root {
   --font-sans: 'Roboto', 'Segoe UI', Arial, sans-serif;
   --clr-primary: #0077cc;
   --clr-accent: #ff6600;
   --spacing: 1rem;
   --max-content-width: 1200px;
+
+  /* theme colors (light defaults) */
+  --bg-default: #fafafa;
+  --text-default: #222;
+  --link-default: var(--clr-primary);
+  --link-hover-default: var(--clr-accent);
 }
 
-/* 4) HTML and body base styles */
+/* 4) Light & Dark Theme */
+[data-theme="light"] {
+  --bg: var(--bg-default);
+  --text: var(--text-default);
+  --link: var(--link-default);
+  --link-hover: var(--link-hover-default);
+}
+[data-theme="dark"] {
+  --bg: #222;
+  --text: #fafafa;
+  --link: #80bfff;
+  --link-hover: #ffc080;
+}
+
+/* 5) HTML and body base styles */
 html {
-  font-size: 100%; /* 16px base */
+  font-size: 100%; /* 16px */
 }
 body {
   font-family: var(--font-sans);
   line-height: 1.6;
-  color: #222;
-  background: #fafafa;
+
+  /* now driven by theme vars */
+  background: var(--bg);
+  color: var(--text);
+
   animation: fadeIn 0.6s ease-out both;
   display: grid;
   grid-template-columns: 1fr min(90%, var(--max-content-width)) 1fr;
@@ -47,14 +71,14 @@ body {
   min-height: 100vh;
 }
 
-/* 5) Place header, main, footer */
+/* 6) Place header, main, footer */
 body > header,
 body > main,
 body > footer {
   grid-column: 2;
 }
 
-/* 6) Typography */
+/* 7) Typography */
 h1, h2, h3 {
   line-height: 1.2;
 }
@@ -65,27 +89,28 @@ abbr[title] {
   text-decoration: underline dotted;
 }
 
-/* 7) Links */
+/* 8) Links */
 a {
-  color: var(--clr-primary);
+  color: var(--link);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 a:hover {
-  color: var(--clr-accent);
+  color: var(--link-hover);
   transform: translateY(-2px);
 }
 
-/* 8) Header and nav */
+/* 9) Header and nav */
 header {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2dvh 2dvw;
   background: #fff;
+  position: relative; /* for theme toggle */
 }
 header nav {
-  display: none;           /* hide on mobile */
+  display: none;
   justify-content: center;
   gap: var(--spacing);
   flex-wrap: wrap;
@@ -101,7 +126,23 @@ header nav a:hover {
   color: #fff;
 }
 
-/* 9) Grid layout for projects section */
+/* 10) Theme‐toggle button */
+#theme-toggle {
+  /* hidden until JS runs */
+  position: absolute;
+  top: var(--spacing);
+  right: var(--spacing);
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+/* only show when JS adds .js-enabled to <html> */
+.js-enabled #theme-toggle {
+  display: block;
+}
+
+/* 11) Grid layout for projects section */
 [aria-labelledby="projects-heading"] {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -109,7 +150,7 @@ header nav a:hover {
   margin: var(--spacing) 0;
 }
 
-/* 10) Grid layout for blog section */
+/* 12) Grid layout for blog section */
 [aria-labelledby="posts-heading"] {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -117,7 +158,7 @@ header nav a:hover {
   margin: var(--spacing) 0;
 }
 
-/* 11) Footer nav */
+/* 13) Footer nav */
 footer nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -125,7 +166,7 @@ footer nav {
   margin-top: var(--spacing);
 }
 
-/* 12) Scoped styles using @scope */
+/* 14) Scoped styles using @scope */
 @scope (section#intro-div) {
   h2 {
     color: var(--clr-accent);
@@ -139,7 +180,7 @@ footer nav {
   }
 }
 
-/* 13) Nested CSS (requires nesting support) */
+/* 15) Nested CSS (requires nesting support) */
 article {
   & > h3 {
     font-size: 1.5rem;
@@ -154,7 +195,7 @@ article {
   }
 }
 
-/* 14) Responsive media query (font-size tweak) */
+/* 16) Responsive media query (font-size tweak) */
 @media (max-width: 768px) {
   :root {
     --spacing: 0.75rem;
@@ -164,7 +205,7 @@ article {
   }
 }
 
-/* Banner images */
+/* 17) Banner & thumbnail images */
 .banner-image {
   width: 100%;
   height: 40dvh;
@@ -172,8 +213,6 @@ article {
   object-position: center;
   margin-bottom: var(--spacing);
 }
-
-/* Thumbnail images */
 .thumbnail {
   display: block;
   width: 100%;
@@ -197,12 +236,12 @@ figure {
   margin-bottom: var(--spacing);
 }
 
-/* 15) Mobile menu toggle */
+/* 18) Mobile menu toggle */
 .menu-toggle {
   display: block;
 }
 
-/* 16) Tablet+ nav reveal */
+/* 19) Tablet+ nav reveal */
 @media (min-width: 641px) {
   .menu-toggle {
     display: none;
@@ -211,22 +250,21 @@ figure {
     display: flex;
   }
 }
-/* 17) Contact‐form layout & stacking */
+
+/* 20) Contact‐form layout & stacking */
 form {
-  max-width: 600px;               /* constrain width */
-  margin: var(--spacing) auto;    /* center on page */
+  max-width: 600px;
+  margin: var(--spacing) auto;
   display: flex;
   flex-direction: column;
   gap: var(--spacing);
   padding: var(--spacing);
 }
-
 form label {
-  display: block;                 /* force on its own line */
+  display: block;
   font-weight: 700;
   margin-bottom: 0.25rem;
 }
-
 form input,
 form textarea {
   width: 100%;
@@ -236,25 +274,22 @@ form textarea {
   font-family: var(--font-sans);
   font-size: 1rem;
 }
-
 form button {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
 }
 
-/* 18) Outputs for errors & info */
+/* 21) Outputs for errors & info */
 form output {
   display: block;
-  min-height: 1.25em;    /* reserve vertical space */
+  min-height: 1.25em;
   font-size: 0.9rem;
   line-height: 1.2;
 }
-
 form output.error {
   color: red;
 }
-
 form output.info {
   color: green;
 }
@@ -262,26 +297,22 @@ form output.info {
 /* ───────────────────────────────────────────────── */
 /* Part 2: HTML/CSS-Only Validation Styling          */
 /* ───────────────────────────────────────────────── */
-
 /* a) Required fields get a colored left border */
 section[aria-labelledby="contact-heading"] form input:required,
 section[aria-labelledby="contact-heading"] form textarea:required {
   border-left: 4px solid var(--clr-accent);
   padding-left: 0.5rem;
 }
-
-/* b) Optional fields (if any) slightly dimmed */
+/* b) Optional fields slightly dimmed */
 section[aria-labelledby="contact-heading"] form input:optional,
 section[aria-labelledby="contact-heading"] form textarea:optional {
   opacity: 0.85;
 }
-
 /* c) Placeholder-only styling */
 section[aria-labelledby="contact-heading"] form input:placeholder-shown,
 section[aria-labelledby="contact-heading"] form textarea:placeholder-shown {
   color: #999;
 }
-
 /* d) Valid / invalid outlines */
 section[aria-labelledby="contact-heading"] form input:invalid,
 section[aria-labelledby="contact-heading"] form textarea:invalid {
@@ -291,7 +322,6 @@ section[aria-labelledby="contact-heading"] form input:valid,
 section[aria-labelledby="contact-heading"] form textarea:valid {
   outline: 2px solid #080;
 }
-
 /* e) Outputs only show when non-empty */
 section[aria-labelledby="contact-heading"] form output {
   display: none;
@@ -310,4 +340,18 @@ section[aria-labelledby="contact-heading"] form output.info:not(:empty) {
   background: #efe;
   color: #080;
   border: 1px solid #080;
+}
+
+/* flash‐error highlight */
+.flash-error {
+  animation: flash-bg 0.3s ease-out both;
+}
+@keyframes flash-bg {
+  from { background: #fee; }
+  to   { background: transparent; }
+}
+/* warning style for countdown */
+section[aria-labelledby="contact-heading"] form output.info.warning {
+  color: var(--clr-accent);
+  font-weight: bold;
 }
