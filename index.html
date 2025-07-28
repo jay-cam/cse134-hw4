@@ -256,12 +256,11 @@
         </article>
       </section>
       <!-- ——— CONTACT FORM ——— -->
-      <section aria-labelledby="contact-heading">
+      <section  aria-labelledby="contact-heading">
         <h2 id="contact-heading">Contact Me</h2>
         <form
           action="https://httpbin.org/post"
           method="post"
-          novalidate
         >
           <!-- honeypot for bots -->
           <input
@@ -273,16 +272,18 @@
           <fieldset>
             <legend>Send me a message</legend>
 
-            <label for="name">Name</label>
+            <label for="name">Name <span aria-hidden="true">*</span></label>
             <input
               type="text"
               id="name"
               name="name"
               required
               maxlength="50"
+              pattern="[A-Za-z\s'-]+"
+              title="Letters, spaces, apostrophes or hyphens only"
             >
 
-            <label for="email">Email</label>
+            <label for="email">Email <span aria-hidden="true">*</span></label>
             <input
               type="email"
               id="email"
@@ -290,12 +291,14 @@
               required
             >
 
-            <label for="comments">Comments</label>
+            <label for="comments">Comments <span aria-hidden="true">*</span></label>
             <textarea
               id="comments"
               name="comments"
               rows="6"
               required
+              minlength="10"
+              maxlength="500"
             ></textarea>
 
             <button type="submit">Send</button>

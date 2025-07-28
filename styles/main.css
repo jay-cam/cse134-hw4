@@ -258,3 +258,56 @@ form output.error {
 form output.info {
   color: green;
 }
+
+/* ───────────────────────────────────────────────── */
+/* Part 2: HTML/CSS-Only Validation Styling          */
+/* ───────────────────────────────────────────────── */
+
+/* a) Required fields get a colored left border */
+section[aria-labelledby="contact-heading"] form input:required,
+section[aria-labelledby="contact-heading"] form textarea:required {
+  border-left: 4px solid var(--clr-accent);
+  padding-left: 0.5rem;
+}
+
+/* b) Optional fields (if any) slightly dimmed */
+section[aria-labelledby="contact-heading"] form input:optional,
+section[aria-labelledby="contact-heading"] form textarea:optional {
+  opacity: 0.85;
+}
+
+/* c) Placeholder-only styling */
+section[aria-labelledby="contact-heading"] form input:placeholder-shown,
+section[aria-labelledby="contact-heading"] form textarea:placeholder-shown {
+  color: #999;
+}
+
+/* d) Valid / invalid outlines */
+section[aria-labelledby="contact-heading"] form input:invalid,
+section[aria-labelledby="contact-heading"] form textarea:invalid {
+  outline: 2px solid #e00;
+}
+section[aria-labelledby="contact-heading"] form input:valid,
+section[aria-labelledby="contact-heading"] form textarea:valid {
+  outline: 2px solid #080;
+}
+
+/* e) Outputs only show when non-empty */
+section[aria-labelledby="contact-heading"] form output {
+  display: none;
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+section[aria-labelledby="contact-heading"] form output.error:not(:empty) {
+  display: block;
+  background: #fee;
+  color: #e00;
+  border: 1px solid #e00;
+}
+section[aria-labelledby="contact-heading"] form output.info:not(:empty) {
+  display: block;
+  background: #efe;
+  color: #080;
+  border: 1px solid #080;
+}
