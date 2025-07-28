@@ -10,22 +10,27 @@ const errorsField  = form.querySelector('#form-errors');
 
 let form_errors = [];
 
-// 1) Masking illegal chars on <input id="name">
-const namePattern = /^[A-Za-z\s'-]*$/;
-nameInput.addEventListener('input', e => {
-  // if the whole value now fails, strip illegal chars:
-  if (!namePattern.test(nameInput.value)) {
-    const bad = nameInput.value.replace(namePattern, '')[0];
+// 1) Mask illegal chars on <input id="name">
+nameInput.addEventListener('input', () => {
+  // find the first character that is NOT in our allow‐list
+  const illegalMatch = nameInput.value.match(/[^A-Za-z\s'-]/);
+  if (illegalMatch) {
+    const bad = illegalMatch[0];
+    // strip all illegal characters
     nameInput.value = nameInput.value.replace(/[^A-Za-z\s'-]/g, '');
+
     // flash the field
     nameInput.classList.add('flash-error');
-    setTimeout(()=> nameInput.classList.remove('flash-error'), 300);
-    // show message, then clear
-    errorOut.textContent = `Illegal character “${bad}”.`;
-    setTimeout(()=> errorOut.textContent = '', 2000);
+    setTimeout(() => nameInput.classList.remove('flash-error'), 300);
+
+    // show message, then clear it
+    errorOut.textContent = `Illegal character “${bad}”`;
+    setTimeout(() => errorOut.textContent = '', 2000);
+
     // record it
     form_errors.push({ field: 'name', badChar: bad, time: Date.now() });
   }
+  // clear any custom validity so built-in messages still work
   nameInput.setCustomValidity('');
 });
 
@@ -34,17 +39,18 @@ const maxLen = parseInt(messageInput.getAttribute('maxlength'), 10);
 messageInput.addEventListener('input', () => {
   const rem = maxLen - messageInput.value.length;
   infoOut.textContent = `${rem} characters remaining.`;
+  // add a warning style when under 50 chars left
   infoOut.classList.toggle('warning', rem < 50);
 });
 
-// 3) On submit, capture form_errors JSON and allow built‐in validity too
+// 3) On submit, capture form_errors JSON and allow built-in validity
 form.addEventListener('submit', e => {
-  // if any built‐in constraint fails, prevent and show
+  // if any HTML5 constraint fails, stop and show browser UI
   if (!form.checkValidity()) {
     e.preventDefault();
     form.reportValidity();
     return;
   }
-  // otherwise attach our error log
+  // otherwise serialize our JS errors into the hidden field
   errorsField.value = JSON.stringify(form_errors);
 });
