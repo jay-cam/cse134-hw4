@@ -8,10 +8,9 @@
     >
     <meta
       name="description"
-      content="Jay Campbell’s portfolio and digital garden"
+      content="Contact Jay Campbell – send me a message"
     >
-
-    <title>Jay Campbell – Portfolio</title>
+    <title>Contact – Jay Campbell</title>
 
     <!-- Preconnect for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,8 +31,7 @@
   <body>
     <noscript>
       <p>
-        JavaScript is disabled in your browser—some features may not
-        work.
+        JavaScript is disabled in your browser — some features may not work.
       </p>
     </noscript>
 
@@ -51,228 +49,46 @@
         <a href="/uses.html">Uses</a>
         <a href="/projects.html">Projects</a>
         <a href="/blog.html">Blog</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/labs.html">Labs</a>
         <a href="/sitemap.html">Sitemap</a>
+        <a href="/contact.html" aria-current="page">Contact</a>
       </nav>
 
-      <h1>Hi, I’m Jay Campbell</h1>
-      <h2>Building things on the web</h2>
-      <hr>
-
-      <p>
-        I'm a <strong>software developer</strong> passionate about
-        creating impactful projects using modern technologies like
-        <abbr title="HyperText Markup Language">HTML</abbr> and
-        <abbr title="Cascading Style Sheets">CSS</abbr>. Welcome to my
-        portfolio!
-      </p>
-
-      <a href="/projects.html">View Portfolio</a>
+      <h1>Contact</h1>
+      <p>Got a question or project idea? Drop me a line.</p>
     </header>
 
     <main>
-      <section aria-labelledby="intro-div">
-        <h2 id="intro-div">Intro</h2>
-        <p>Welcome to my portfolio site.</p>
-      </section>
+      <!-- Responsive contact banner -->
+      <figure class="banner">
+        <picture>
+          <!-- … your responsive sources … -->
+          <img
+            src="images/contact-us-small.jpg"
+            alt="Illustration of a contact form"
+            class="banner-image"
+          >
+        </picture>
+      </figure>
 
-      <section aria-labelledby="projects-heading">
-        <h2 id="projects-heading">Featured Projects</h2>
+      <!-- our new contact section -->
+      <section aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Send me a message</h2>
 
-        <article aria-labelledby="proj1-heading">
-          <h3 id="proj1-heading">Project 1</h3>
-          <figure>
-            <picture>
-              <!-- Desktop: large or medium -->
-              <source
-                media="(min-width:1024px)"
-                type="image/webp"
-                srcset="
-                  images/project1-large.webp 1200w,
-                  images/project1-medium.webp 800w
-                "
-                sizes="(min-width:1024px) 1200px, 100vw"
-              >
-              <source
-                media="(min-width:1024px)"
-                type="image/jpeg"
-                srcset="
-                  images/project1-large.jpg 1200w,
-                  images/project1-medium.jpg 800w
-                "
-                sizes="(min-width:1024px) 1200px, 100vw"
-              >
-
-              <!-- Tablet: medium -->
-              <source
-                media="(min-width:640px)"
-                type="image/webp"
-                srcset="images/project1-medium.webp 800w"
-                sizes="(min-width:640px) 800px, 100vw"
-              >
-              <source
-                media="(min-width:640px)"
-                type="image/jpeg"
-                srcset="images/project1-medium.jpg 800w"
-                sizes="(min-width:640px) 800px, 100vw"
-              >
-
-              <!-- Mobile: small -->
-              <source
-                type="image/webp"
-                srcset="images/project1-small.webp 400w"
-                sizes="400px"
-              >
-              <img
-                src="images/project1-small.jpg"
-                alt="Screenshot of Project 1"
-                class="thumbnail"
-              >
-            </picture>
-            <figcaption>Brief description of the project.</figcaption>
-          </figure>
-          <a href="/projects/proj1.html">View Project</a>
-        </article>
-
-        <article aria-labelledby="proj2-heading">
-          <h3 id="proj2-heading">Project 2</h3>
-          <figure>
-            <picture>
-              <!-- Desktop: large or medium -->
-              <source
-                media="(min-width:1024px)"
-                type="image/webp"
-                srcset="
-                  images/project2-large.webp 1200w,
-                  images/project2-medium.webp 800w
-                "
-                sizes="(min-width:1024px) 1200px, 100vw"
-              >
-              <source
-                media="(min-width:1024px)"
-                type="image/jpeg"
-                srcset="
-                  images/project2-large.jpg 1200w,
-                  images/project2-medium.jpg 800w
-                "
-                sizes="(min-width:1024px) 1200px, 100vw"
-              >
-
-              <!-- Tablet: medium -->
-              <source
-                media="(min-width:640px)"
-                type="image/webp"
-                srcset="images/project2-medium.webp 800w"
-                sizes="(min-width:640px) 800px, 100vw"
-              >
-              <source
-                media="(min-width:640px)"
-                type="image/jpeg"
-                srcset="images/project2-medium.jpg 800w"
-                sizes="(min-width:640px) 800px, 100vw"
-              >
-
-              <!-- Mobile: small -->
-              <source
-                type="image/webp"
-                srcset="images/project2-small.webp 400w"
-                sizes="400px"
-              >
-              <img
-                src="images/project2-small.jpg"
-                alt="Screenshot of Project 2"
-                class="thumbnail"
-              >
-            </picture>
-            <figcaption>Brief description of the project.</figcaption>
-          </figure>
-          <a href="/projects/proj2.html">View Project</a>
-        </article>
-
-        <a href="/projects.html">+ See More</a>
-      </section>
-
-      <section aria-labelledby="blog-heading">
-        <h2 id="blog-heading">Blog</h2>
-
-        <article
-          aria-labelledby="blog-thumb-heading"
-          class="blog-thumb"
-        >
-          <h3 id="blog-thumb-heading">Latest Post</h3>
-          <figure>
-            <picture>
-              <!-- Desktop: large or medium -->
-              <source
-                media="(min-width:1024px)"
-                type="image/webp"
-                srcset="
-                  images/blog-large.webp 1200w,
-                  images/blog-medium.webp 800w
-                "
-                sizes="(min-width:1024px) 1200px, 100vw"
-              >
-              <source
-                media="(min-width:1024px)"
-                type="image/jpeg"
-                srcset="
-                  images/blog-large.jpg 1200w,
-                  images/blog-medium.jpg 800w
-                "
-                sizes="(min-width:1024px) 1200px, 100vw"
-              >
-
-              <!-- Tablet: medium -->
-              <source
-                media="(min-width:640px)"
-                type="image/webp"
-                srcset="images/blog-medium.webp 800w"
-                sizes="(min-width:640px) 800px, 100vw"
-              >
-              <source
-                media="(min-width:640px)"
-                type="image/jpeg"
-                srcset="images/blog-medium.jpg 800w"
-                sizes="(min-width:640px) 800px, 100vw"
-              >
-
-              <!-- Mobile: small -->
-              <source
-                type="image/webp"
-                srcset="images/blog-small.webp 400w"
-                sizes="400px"
-              >
-              <img
-                src="images/blog-small.jpg"
-                alt="Illustration for blog"
-                class="thumbnail"
-              >
-            </picture>
-            <figcaption>
-              <p>Brief excerpt from the latest blog post.</p>
-            </figcaption>
-          </figure>
-          <a href="/blog/post1.html">Read More</a>
-        </article>
-      </section>
-      <!-- ——— CONTACT FORM ——— -->
-      <section  aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Contact Me</h2>
         <form
           action="https://httpbin.org/post"
           method="post"
+          novalidate
         >
           <!-- honeypot for bots -->
-          <input
-            type="hidden"
-            name="possible_bot"
-            value="true"
-          >
+          <input type="hidden" name="possible_bot" value="true">
 
           <fieldset>
             <legend>Send me a message</legend>
 
-            <label for="name">Name <span aria-hidden="true">*</span></label>
+            <label for="name">
+              Your Name <span aria-hidden="true">*</span>
+            </label>
             <input
               type="text"
               id="name"
@@ -283,7 +99,9 @@
               title="Letters, spaces, apostrophes or hyphens only"
             >
 
-            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <label for="email">
+              Email <span aria-hidden="true">*</span>
+            </label>
             <input
               type="email"
               id="email"
@@ -291,10 +109,12 @@
               required
             >
 
-            <label for="comments">Comments <span aria-hidden="true">*</span></label>
+            <label for="message">
+              Message <span aria-hidden="true">*</span>
+            </label>
             <textarea
-              id="comments"
-              name="comments"
+              id="message"
+              name="message"
               rows="6"
               required
               minlength="10"
@@ -304,59 +124,26 @@
             <button type="submit">Send</button>
           </fieldset>
 
-          <!-- Part 2 styling hooks: stack‐labels, outputs -->
+          <!-- styling hooks for Part 2 -->
           <output class="error" aria-live="polite"></output>
-          <output class="info"  aria-live="polite"></output>
+          <output class="info" aria-live="polite"></output>
         </form>
       </section>
 
+      <section aria-labelledby="social-heading">
+        <h2 id="social-heading">Other ways to reach me</h2>
+        <address>
+          <a href="mailto:jay.campbell93@outlook.com">
+            jay.campbell93@outlook.com
+          </a><br>
+          <a href="https://github.com/jay-cam">GitHub</a> ·
+          <a href="https://linkedin.com/in/jay-cam">LinkedIn</a>
+        </address>
+      </section>
     </main>
 
     <footer>
-      <nav>
-        <section>
-          <h4><a href="/uses.html">/uses</a></h4>
-          <p>Tools and technologies I use</p>
-          <ul>
-            <li><a href="mailto:jay@example.com">Email</a></li>
-            <li>
-              <a href="https://github.com/jay-cam">GitHub</a>
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h4><a href="/now.html">/now</a></h4>
-          <p>What I’m currently working on</p>
-          <ul>
-            <li>
-              <a href="https://www.linkedin.com/in/jay-campbell/"
-                >LinkedIn</a
-              >
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h4><a href="/colophon.html">/colophon</a></h4>
-          <p>About this site and its creation</p>
-          <ul>
-            <li><cite>Self-hosted on Netlify</cite></li>
-          </ul>
-        </section>
-
-        <section aria-labelledby="audioIntro">
-          <h2 id="audioIntro" hidden>Audio Introduction</h2>
-          <p>Here's a short audio introduction:</p>
-          <audio controls>
-            <source
-              src="audio/intro.mp3"
-              type="audio/mpeg"
-            >
-            <p>Your browser does not support the audio element.</p>
-          </audio>
-        </section>
-      </nav>
+      <p>© Jay Campbell</p>
     </footer>
   </body>
 </html>
