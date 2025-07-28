@@ -211,3 +211,50 @@ figure {
     display: flex;
   }
 }
+/* 17) Contact‐form layout & stacking */
+form {
+  max-width: 600px;               /* constrain width */
+  margin: var(--spacing) auto;    /* center on page */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  padding: var(--spacing);
+}
+
+form label {
+  display: block;                 /* force on its own line */
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+
+form button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* 18) Outputs for errors & info */
+form output {
+  display: block;
+  min-height: 1.25em;    /* reserve vertical space */
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+form output.error {
+  color: red;
+}
+
+form output.info {
+  color: green;
+}
